@@ -1,0 +1,44 @@
+
+label[for="btnImage1"] {
+    background-color: rgb(30, 162, 214);
+    height: 38px; display: inline-block; transition: all .5s; cursor: pointer; padding: 5px 11px !important; width: fit-content; text-align: center; border-radius: 5px; }
+   
+label[for="btnImage1"]:hover { opacity: 0.6; }
+.imgResultado .iptFoto
+{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.imgResultado
+{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.imagenResultado{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 200px;	
+    height: 200px;
+    border-radius: 15px;    
+    border: 1px solid #ced4da;
+}
+
+.imagenResultado img{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+	max-width: 200px;	
+    max-height: 200px; 
+    border-radius: 15px;    
+}
