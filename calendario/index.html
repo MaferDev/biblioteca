@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+   <head>
+      <meta charset="UTF-8" />
+      <title>A date range picker for Bootstrap</title>
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+
+      <link rel="stylesheet" type="text/css" media="all" href="daterangepicker.css" />
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+      <script type="text/javascript" src="moment.min.js"></script>
+
+      <script type="text/javascript" src="daterangepicker.js"></script>
+   </head>
+   <body style="margin: 60px 0">
+    <div class="container">
+        <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span></span> <i class="fa fa-caret-down"></i>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript">
+    $(function() {
+    
+        var start = moment().subtract(6, 'days');
+        var end = moment();
+    
+        function cb(start, end) {
+            $('#reportrange span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+        }
+    
+        $('#reportrange').daterangepicker({
+            startDate: start,
+            endDate: end,
+            applyClass: "btn-danger",
+            cancelClass: "btn-dark",
+            ranges: {
+               'Hoy': [moment(), moment()],
+               'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+               'Hace 7 Días': [moment().subtract(6, 'days'), moment()],
+               'Hace 30 Días': [moment().subtract(29, 'days'), moment()],
+               'Este Més': [moment().startOf('month'), moment().endOf('month')],
+               'Ultimo Més': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);    
+        cb(start, end);    
+    });
+    </script>
+   </body>
+</html>
