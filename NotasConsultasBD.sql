@@ -52,3 +52,11 @@ like '[a-z]'  -- datos que solo tengan caracteres entre esos rangos ('f', 'p', '
 like '[!a-z]' -- datos que estén Fuera de ese rango  ('9', '&', '%')
 like '[!0-9]' -- datos Distinto de un dígito ('A', 'a', '&', '~')
 like 'a[!b-m]#'  -- datos combinados ('An9', 'az0', 'a99')
+
+/*==============================================================================================
+IN 
+Este operador devuelve aquellos registros cuyo campo indicado coincide con alguno de los en una lista.
+================================================================================================*/  
+
+ SELECT * FROM Pedidos WHERE Provincia In ('Madrid', 'Barcelona', 'Sevilla');
+ 
