@@ -58,3 +58,27 @@ public static bool CopiarArchivo()
         return false;
     }
 }
+
+//Mover Archivos de un lugar a otro
+        public static bool MoverArchivo()
+        {
+
+            string rutaInicial = @"D:\Biopsia.jpg";
+            string rutaFinal = @"\\192.168.0.15\biopsias3\Biopsia.jpg";
+
+            if (!Directory.Exists(@"\\192.168.0.15\biopsias3"))
+            {
+                Directory.CreateDirectory(@"\\192.168.0.15\biopsias3");
+            }
+
+            if (File.Exists(rutaInicial))
+            {
+                File.Move(rutaInicial, rutaFinal);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
