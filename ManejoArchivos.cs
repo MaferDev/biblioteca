@@ -36,3 +36,25 @@ public void CopiarArchivosDirectorio(){
         EventLog.WriteEntry(ex.Message, EventLogEntryType.Error);
     }   
 }
+
+//Copia un archivo de un directorio a Otro
+public static bool CopiarArchivo()
+{
+    string rutaInicial = @"\\192.168.0.15\adicionales\2016\10\000331016\000331016-20161123-1.pdf";
+    string rutaFinal = @"D:\Carpeta Temporal\000331016-20161123-1.pdf";
+
+    if (!Directory.Exists(@"D:\Carpeta Temporal"))
+    {
+        Directory.CreateDirectory(@"D:\Carpeta Temporal");
+    }
+
+    if (File.Exists(rutaInicial))
+    {
+        File.Copy(rutaInicial, rutaFinal, true);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
