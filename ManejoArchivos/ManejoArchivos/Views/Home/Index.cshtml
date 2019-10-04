@@ -1,0 +1,61 @@
+﻿@using ManejoArchivos.Controllers;
+
+@{
+    ViewBag.Title = "MANEJO DE ARCHIVOS";
+}
+
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-4">
+            <a class="btn btn-primary" href="#" role="button" id="btnCopiar">Copiar Archivos</a>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-primary" href="#" role="button" id="btnCopiarpdf">Copiar pdf</a>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-primary" href="#" role="button" id="btnfirmapdf">incluir firma</a>
+        </div>
+    </div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnCopiar').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("CopiarArchivo")',
+                    content: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {},
+                    success: function (response) {
+                        if (response.Success) alert("Copiado")
+                        else  alert ("Fail!")
+                    },
+                    error: function (xhr, textStatus, errorThrown) { alert('Error!!')   }
+                })
+            })
+                        
+            $('#btnCopiarpdf').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GenerarArchivoAgrupado")',
+                    content: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {},
+                    success: function (response) { alert(response.Msg) },
+                    error: function (xhr, textStatus, errorThrown) { alert('Error!!') }
+                })
+            })
+                        
+            $('#btnfirmapdf').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("FirmarArchivo")',
+                    content: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {},
+                    success: function (response) { alert(response.Msg) },
+                    error: function (xhr, textStatus, errorThrown) { alert('Error!!') }
+                })
+            })
+        })
+    </script>
+}
