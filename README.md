@@ -1,2 +1,2 @@
 # biblioteca
-Anotaciones que se aprende cuando se programa
+Anotaciones que se aprende
