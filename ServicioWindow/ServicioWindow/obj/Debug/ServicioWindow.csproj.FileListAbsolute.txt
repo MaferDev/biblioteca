@@ -1,0 +1,12 @@
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\bin\Debug\ServicioWindow.exe.config
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\bin\Debug\ServicioWindow.exe
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\bin\Debug\ServicioWindow.pdb
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\obj\Debug\ServicioWindow.csprojAssemblyReference.cache
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\obj\Debug\ServicioWindow.exe
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\obj\Debug\ServicioWindow.pdb
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\bin\Debug\ServicioWindow.exe.manifest
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\bin\Debug\ServicioWindow.application
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\obj\Debug\ServicioWindow.exe.manifest
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\obj\Debug\ServicioWindow.application
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\obj\Debug\ServicioWindow.Archivos.resources
+C:\Users\mhuaman\source\repos\ServicioWindow\ServicioWindow\obj\Debug\ServicioWindow.csproj.GenerateResource.cache
