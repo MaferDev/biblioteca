@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:tns="http://ws.feds/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="consultService" targetNamespace="http://ws.feds/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ws.feds/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getDocumentoCDR" type="tns:getDocumentoCDR" />
+      <xs:element name="getDocumentoCDRResponse" type="tns:getDocumentoCDRResponse" />
+      <xs:element name="getDocumentoPDF" type="tns:getDocumentoPDF" />
+      <xs:element name="getDocumentoPDFResponse" type="tns:getDocumentoPDFResponse" />
+      <xs:element name="getDocumentoXML" type="tns:getDocumentoXML" />
+      <xs:element name="getDocumentoXMLResponse" type="tns:getDocumentoXMLResponse" />
+      <xs:complexType name="getDocumentoPDF">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ruc" type="xs:string" />
+          <xs:element minOccurs="0" name="tipo" type="xs:string" />
+          <xs:element minOccurs="0" name="serie" type="xs:string" />
+          <xs:element minOccurs="0" name="correlativo" type="xs:string" />
+          <xs:element minOccurs="0" name="fecha" type="xs:string" />
+          <xs:element minOccurs="0" name="total" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocumentoPDFResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocumentoXML">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ruc" type="xs:string" />
+          <xs:element minOccurs="0" name="tipo" type="xs:string" />
+          <xs:element minOccurs="0" name="serie" type="xs:string" />
+          <xs:element minOccurs="0" name="correlativo" type="xs:string" />
+          <xs:element minOccurs="0" name="fecha" type="xs:string" />
+          <xs:element minOccurs="0" name="total" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocumentoXMLResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocumentoCDR">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ruc" type="xs:string" />
+          <xs:element minOccurs="0" name="tipo" type="xs:string" />
+          <xs:element minOccurs="0" name="serie" type="xs:string" />
+          <xs:element minOccurs="0" name="correlativo" type="xs:string" />
+          <xs:element minOccurs="0" name="fecha" type="xs:string" />
+          <xs:element minOccurs="0" name="total" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDocumentoCDRResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Exception" type="tns:Exception" />
+      <xs:complexType name="Exception">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getDocumentoPDF">
+    <wsdl:part name="parameters" element="tns:getDocumentoPDF" />
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="Exception" element="tns:Exception" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentoCDR">
+    <wsdl:part name="parameters" element="tns:getDocumentoCDR" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentoCDRResponse">
+    <wsdl:part name="parameters" element="tns:getDocumentoCDRResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentoXMLResponse">
+    <wsdl:part name="parameters" element="tns:getDocumentoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentoXML">
+    <wsdl:part name="parameters" element="tns:getDocumentoXML" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentoPDFResponse">
+    <wsdl:part name="parameters" element="tns:getDocumentoPDFResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConsultService">
+    <wsdl:operation name="getDocumentoPDF">
+      <wsdl:input name="getDocumentoPDF" message="tns:getDocumentoPDF" />
+      <wsdl:output name="getDocumentoPDFResponse" message="tns:getDocumentoPDFResponse" />
+      <wsdl:fault name="Exception" message="tns:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentoXML">
+      <wsdl:input name="getDocumentoXML" message="tns:getDocumentoXML" />
+      <wsdl:output name="getDocumentoXMLResponse" message="tns:getDocumentoXMLResponse" />
+      <wsdl:fault name="Exception" message="tns:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentoCDR">
+      <wsdl:input name="getDocumentoCDR" message="tns:getDocumentoCDR" />
+      <wsdl:output name="getDocumentoCDRResponse" message="tns:getDocumentoCDRResponse" />
+      <wsdl:fault name="Exception" message="tns:Exception" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="consultServiceSoapBinding" type="tns:ConsultService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDocumentoPDF">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getDocumentoPDF">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDocumentoPDFResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap12:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentoXML">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getDocumentoXML">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDocumentoXMLResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap12:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentoCDR">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getDocumentoCDR">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDocumentoCDRResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap12:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="consultService">
+    <wsdl:port name="ConsultServiceImpPort" binding="tns:consultServiceSoapBinding">
+      <soap12:address location="http://13.59.70.32/wsconsult/wsconsult/consultService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

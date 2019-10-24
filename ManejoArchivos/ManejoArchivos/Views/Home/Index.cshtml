@@ -14,6 +14,9 @@
         <div class="col-md-4">
             <a class="btn btn-primary" href="#" role="button" id="btnfirmapdf">incluir firma</a>
         </div>
+        <div class="col-md-4">
+            <a class="btn btn-primary" href="#" role="button" id="btnGetFactura">Obtener Factura</a>
+        </div>
     </div>
 @section scripts{
     <script type="text/javascript">
@@ -49,6 +52,18 @@
                 $.ajax({
                     type: "POST",
                     url: '@Url.Action("FirmarArchivo")',
+                    content: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {},
+                    success: function (response) { alert(response.Msg) },
+                    error: function (xhr, textStatus, errorThrown) { alert('Error!!') }
+                })
+            })
+                        
+            $('#btnGetFactura').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("getFactura")',
                     content: "application/json; charset=utf-8",
                     dataType: "json",
                     data: {},

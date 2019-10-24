@@ -1,0 +1,219 @@
+﻿@using Upload.Controllers;
+
+@{
+                /**/
+
+                ViewBag.Title = "Home Page";
+}
+
+
+<style   type="text/css">
+    .grupImagesResultado .imgResultado .iptFoto {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    label[for="btnImage1"] {
+        height: 38px;
+        display: inline-block;
+        transition: all .5s;
+        cursor: pointer;
+        padding: 5px 11px !important;
+        width: fit-content;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+     label[for="btnImage1"]:hover {
+            opacity: 0.6;
+        }
+
+    .grupImagesResultado .imgResultado {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .imagenResultado {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        border-radius: 15px;
+        border: 1px solid #ced4da;
+    }
+
+        .imagenResultado img {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            overflow: hidden;
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 15px;
+        }
+    .btnSkyBlue{
+        background-color:aqua;
+    }
+    </style>
+<div class="container">
+    <form action="javascripts:;" method="post" enctype="multipart/form-data">
+        <input name="fileUpload" class="form-control-file iptFoto" id="fileUpload1" type="file" accept=".jpg, .jpeg, .png">
+        <input name="fileUpload" class="form-control-file iptFoto" id="fileUpload2" type="file" accept=".jpg, .jpeg, .png">
+        <input type="button" id="btn-send-ajax" value="Enviar" />
+        <a class="btn btn-default btn-sm" name="btn-send-ajax" href="#" onclick="EditPost();" data-toggle="tooltip" title="Exportar"> <i class="dx-icon-save"></i></a>
+       <hr />
+        <br />
+        <div class="form-group grupImagesResultado row col-12">
+            <label class="col-sm-12 col-md-4 col-form-label" for="imgResultado1">
+                Imagenes de Resultado:
+                <small class="d-block">(Max. 3 Imagenes)</small>
+            </label>
+            <div class="col-sm-12 col-md-8 row">
+                <div class="col-12 col-sm-6 col-md-4 imgResultado">
+                    <div class="btnUpload">
+                        <label for="btnImage1" class="btnSkyBlue">
+                            <span>Agregar Imagen</span>
+                        </label>
+                        <span>
+                            <input name="btnImage1" class="form-control-file iptFoto" id="btnImage1" type="file" accept=".jpg, .jpeg, .png" >
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 listImagenes text-right row mt-3">
+            </div>
+            <button type="button" class="btn btn-primary" id="btn_save_img">Guardar Imagnes</button>
+        </div>
+    </form>
+</div>
+@section Scripts
+{
+
+    <script type="text/javascript">
+        var listImgResult = []; // Lista de imagenes de resultado
+
+        $(document).ready(function () {
+
+            $("#btn-send-ajax").click(function () {
+
+                for (var i = 1; i < 2; i++) {
+                    var selectFile = ($("#fileUpload" + i))[0].files[0];
+
+                    var dataString = new FormData();
+
+                    if (!selectFile) {
+                        alert("No se ha Cargado El Archivo (html)");
+                    } else
+                        console.log(selectFile);
+
+                    dataString.append("fileUpload", selectFile);
+                    dataString.append("rutafile", "biopsia/");
+                    dataString.append("ticket", "6666");
+                    $.ajax({
+                        url: '@Url.Action("LoadImage", "Home")',
+                        type: "POST",
+                        data: dataString,
+                        contentType: false,
+                        processData: false,
+                        async: false,
+                        beforeSend: function () { console.log(dataString) },
+                        success: function (data) {
+                            if (typeof (data.state) != "undefined") {
+                                console.log(i, data.Message);
+                            } else {
+                                console.log(i, "Error No identificado");
+                            }
+                        },
+                        error: function (data) { }
+                    });
+                }
+            })
+
+            $('.imgResultado input').change(function () {
+                let numImg = listImgResult.length
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader()
+                    reader.onload = function (e) {
+                        if (numImg != 3) {
+                            listImgResult.push({ image: e.target.result, obj: ($("#btnImage1"))[0].files[0] })
+                            console.log(listImgResult)
+                            printImg()
+                        }
+                    }
+                    reader.readAsDataURL(this.files[0])
+                }
+            })
+
+            $('#btn_save_img').click(function () {
+                LoadFotoServidor("123456").then((response) => {
+                    console.log(response)
+                })
+            })
+        });
+
+        function printImg() {
+            $(`.listImagenes`).empty()
+            listImgResult.forEach((element, index) => {
+                let img = `<div class="col-12 col-sm-6 col-md-4 text-center">
+                        <div class="imagenResultado mb-2 mr-2">
+                            <img id="imgResultado${index}" src="${element.image}" />
+                        </div>
+                        <div><button type="button" class="btnDeleteImg btnGray" data-id="${index}" onclick="EliminarFoto(this)">
+                                    <span>Eliminar</span>
+                        </button></div>
+                    </div>`;
+                $('.listImagenes').append(img)
+            })
+
+        }
+
+        function EliminarFoto(element) {
+            let index = $(element).data('id');
+            listImgResult.splice(index, 1)
+            printImg();
+        }
+        function LoadFotoServidor(ticket) {
+            return new Promise((resolve) => {
+                listImgResult.forEach((element, index) => {
+                    var selectFile = element.obj;
+                    var dataImages = new FormData();
+                    var rutaFile = "biopsias3";                    
+                    dataImages.append("fileUpload", selectFile);
+                    if (index != 0) {
+                        rutaFile = rutaFile + (index+1)
+                    }
+                    dataImages.append("rutafile", rutaFile+"/");
+                    dataImages.append("ticket", ticket);
+                    $.ajax({
+                        url: '@Url.Action("LoadImage", "Home")',
+                        type: "POST",
+                        data: dataImages,
+                        contentType: false,
+                        processData: false,
+                        async: false,
+                        beforeSend: function () { console.log("Cargando...",index) },
+                        success: function (data) {
+                            if (typeof (data.state) != "undefined") {
+                                console.log(index, data.Message);
+                            } else {
+                                console.log(index, "Error No identificado");
+                            }
+                            if (index == listImgResult.length - 1)
+                                resolve("Load Fotos")
+                        },
+                        error: function (data) { }
+                    });
+                })
+            })
+        }
+    </script>
+}

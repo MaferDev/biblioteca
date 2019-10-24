@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Conectado">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConectadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConectadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSessionResult" type="tns:UsuarioCia" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UsuarioCia">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Base">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CodUsuario" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CodPerfil" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="RucCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumCatPagoCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApellidoPaterno" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApellidoMaterno" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoDocumento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumeroDocumento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TelfTrabajo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Celular" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Domicilio" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Caducado" type="s:short" />
+              <s:element minOccurs="1" maxOccurs="1" name="FechaCaducidad" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="CMP" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ValorPerfil" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombrePerfil" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RazonCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombreCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombreUsuarioCorto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombreUsuarioCompleto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumPaciente" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumAnioPaciente" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EstadoPaciente" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="UltimoAcceso" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="UltimoAccesoSRO" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="FlagWebSRO" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CambioClavePrimeraVez" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ContAlerta" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ContCia" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListUsuarioCia" type="tns:ArrayOfUsuarioCia" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListCompania" type="tns:ArrayOfCompania" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListAcceso" type="tns:ArrayOfAcceso" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Base">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Activo" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsuarioRegistro" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsuarioModificacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreUsuarioRegistro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreUsuarioModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TextoBusqueda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Todos" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaRegistro" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaModificacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltimoResultado" type="tns:Resultado" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Resultado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EsValido" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultadoOperacion" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CadenaConexion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltimoDataSet">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Acceso">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Base">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CodUsuario" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CodPerfil" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DescPerfil" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CiaRuc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CiaRazSocial" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="UltAcceso" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoApp" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListAcceso" type="tns:ArrayOfAcceso" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAcceso">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Acceso" nillable="true" type="tns:Acceso" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Compania">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Base">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="FoxCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RucCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RazonCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombreCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumCatPagoCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListCompania" type="tns:ArrayOfCompania" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompania">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Compania" nillable="true" type="tns:Compania" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUsuarioCia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UsuarioCia" nillable="true" type="tns:UsuarioCia" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListDriveHistByUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDriveHistByUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListDriveHistByUsuarioResult" type="tns:SuizaDrive" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SuizaDrive">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Base">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ip" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FoxCia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumCia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RucCia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Compania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Web" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoUsuario" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CompletoDescarga" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CantDescarga" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListAtencion" type="tns:ArrayOfAtencion" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListDriveCab" type="tns:ArrayOfSuizaDrive" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListDriveDet" type="tns:ArrayOfSuizaDriveDet" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAtencion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Atencion" nillable="true" type="tns:Atencion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Atencion">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Base">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IdAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NombreTrabajador" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodigoAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PerAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AnoAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumEmpAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumSucAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SedeAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SedeAtencionDesc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoAtencionDesc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EstadoAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EstadoAtencionDesc" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FechaTentativaAtencion" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="FechaRealAtencion" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="FechaCierre" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="FechaFinAte" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="ObservacionesAtencion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EstadoFormatoMedico" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CantFormatoMedico" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CantPermisoCia" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="UsuarioWebReg" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FlagAuditoria" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RegValido" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Modalidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteCodigo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteNumPac" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacientePacAno" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteNombres" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteApellidoPaterno" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteApellidoMaterno" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteNombreCorto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteNombreCompleto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteTipoDocumento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteTipoDocumentoDesc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteNumeroDocumento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteSexo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PacienteEdad" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="PacienteFechaNacimiento" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteArea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacientePuesto" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PacienteExisteReg" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteCorreo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteUsuarioWeb" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PacienteClaveWeb" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MedicoCodigo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MedicoNombres" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MedicoApellidoPaterno" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MedicoApellidoMaterno" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MedicoCorreo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MedicoUsuarioWeb" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MedicoClaveWeb" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompaniaNComercial" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompaniaFoxCia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompaniaRazCia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompaniaNumCia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompaniaRucCia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompaniaNumCatPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmpresaCiaRefNum" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmpresaCiaRefDesc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaqueteCodigo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaqueteNumPaq" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaqueteAnoPaq" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaqueteDescripcion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaqueteFlagPaq" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PaqueteCosto" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodigoTicket" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumTicket" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PerTicket" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AnoTicket" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumEmpTicket" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumSucTicket" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EstadoInforme" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InfPersonalizado" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FactEnvioSuite" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="FactElectronica" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="FactNumDocVenta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FactDocVenta" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FactFecha" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="FactNumero" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FactSerie" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FactMoneda" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FactTotalSoles" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="FactTotalDolares" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Debe" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocumentoVenta" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PermisoVigencia" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocumentoAdjunto" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="EncuestaRealizo" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EncuestaPuntaje" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="EncuestaMsjeAd" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DireccionIP" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FlagFirmaDigital" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RutaPdfInformeComp" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RutaPdfAptitud" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RutaPdfResumen" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RutaPdfMedicoGemo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RutaPdfAnexo16" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RutaPdfAnexo16A" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RutaPdfPsicosometrico" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Tipo_Descarga" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tipo_Descarga_des" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Formato" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccionReporteFrm" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListAtencion" type="tns:ArrayOfAtencion" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListServicio" type="tns:ArrayOfServicios" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfServicios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Servicios" nillable="true" type="tns:Servicios" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Servicios">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Base">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IdPaquete" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumCompania" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Paciente" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FoxServicio" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumServicio" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Realizado" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Atendido" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nivel1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Formato" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FormatoPersonalizado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoFormato" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Paquete" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PqNum" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PqAnio" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EstadoDesc" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FechaAtencion" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="FechaAuditoria" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListServicios" type="tns:ArrayOfServicios" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfSuizaDrive">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SuizaDrive" nillable="true" type="tns:SuizaDrive" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSuizaDriveDet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SuizaDriveDet" nillable="true" type="tns:SuizaDriveDet" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SuizaDriveDet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Base">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CodigoOrdenServicio" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PeriodoOrdenServicio" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AnoOrdenServicio" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodigoSucursal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodigoEmpresa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Item" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodigoTicket" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DescEstado" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DescFecha" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="DescIP" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DescPC" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Paciente" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ArrInforme" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ListDriveHistByUserRango">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaIni" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaFin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDriveHistByUserRangoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListDriveHistByUserRangoResult" type="tns:SuizaDrive" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDriveDownloadDet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCodigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDriveDownloadDetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListDriveDownloadDetResult" type="tns:SuizaDrive" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListCompaniaRucByUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListCompaniaRucByUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCompaniaRucByUserResult" type="tns:Compania" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfOcupacionalPacFirmDig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTicket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bExterno" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfOcupacionalPacFirmDigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfOcupacionalPacFirmDigResult" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFileMsje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfOcupacionalPac">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTicket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bExterno" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfOcupacionalPacResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfOcupacionalPacResult" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFileMsje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfPreventivoPac">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTicket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfPreventivoPacResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfPreventivoPacResult" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFileMsje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDriveDownloadDet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCodigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTicket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPC" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDriveDownloadDetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDriveDownloadDetResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConectadoSoapIn">
+    <wsdl:part name="parameters" element="tns:Conectado" />
+  </wsdl:message>
+  <wsdl:message name="ConectadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConectadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSession" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListDriveHistByUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ListDriveHistByUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ListDriveHistByUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ListDriveHistByUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListDriveHistByUserRangoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListDriveHistByUserRango" />
+  </wsdl:message>
+  <wsdl:message name="ListDriveHistByUserRangoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListDriveHistByUserRangoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListDriveDownloadDetSoapIn">
+    <wsdl:part name="parameters" element="tns:ListDriveDownloadDet" />
+  </wsdl:message>
+  <wsdl:message name="ListDriveDownloadDetSoapOut">
+    <wsdl:part name="parameters" element="tns:ListDriveDownloadDetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCompaniaRucByUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ListCompaniaRucByUser" />
+  </wsdl:message>
+  <wsdl:message name="ListCompaniaRucByUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ListCompaniaRucByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfOcupacionalPacFirmDigSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfOcupacionalPacFirmDig" />
+  </wsdl:message>
+  <wsdl:message name="GetInfOcupacionalPacFirmDigSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfOcupacionalPacFirmDigResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfOcupacionalPacSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfOcupacionalPac" />
+  </wsdl:message>
+  <wsdl:message name="GetInfOcupacionalPacSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfOcupacionalPacResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfPreventivoPacSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfPreventivoPac" />
+  </wsdl:message>
+  <wsdl:message name="GetInfPreventivoPacSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfPreventivoPacResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDriveDownloadDetSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDriveDownloadDet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDriveDownloadDetSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDriveDownloadDetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsSuizaDriveSoap">
+    <wsdl:operation name="Conectado">
+      <wsdl:input message="tns:ConectadoSoapIn" />
+      <wsdl:output message="tns:ConectadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSession">
+      <wsdl:input message="tns:GetSessionSoapIn" />
+      <wsdl:output message="tns:GetSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListDriveHistByUsuario">
+      <wsdl:input message="tns:ListDriveHistByUsuarioSoapIn" />
+      <wsdl:output message="tns:ListDriveHistByUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListDriveHistByUserRango">
+      <wsdl:input message="tns:ListDriveHistByUserRangoSoapIn" />
+      <wsdl:output message="tns:ListDriveHistByUserRangoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListDriveDownloadDet">
+      <wsdl:input message="tns:ListDriveDownloadDetSoapIn" />
+      <wsdl:output message="tns:ListDriveDownloadDetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCompaniaRucByUser">
+      <wsdl:input message="tns:ListCompaniaRucByUserSoapIn" />
+      <wsdl:output message="tns:ListCompaniaRucByUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfOcupacionalPacFirmDig">
+      <wsdl:input message="tns:GetInfOcupacionalPacFirmDigSoapIn" />
+      <wsdl:output message="tns:GetInfOcupacionalPacFirmDigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfOcupacionalPac">
+      <wsdl:input message="tns:GetInfOcupacionalPacSoapIn" />
+      <wsdl:output message="tns:GetInfOcupacionalPacSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfPreventivoPac">
+      <wsdl:input message="tns:GetInfPreventivoPacSoapIn" />
+      <wsdl:output message="tns:GetInfPreventivoPacSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDriveDownloadDet">
+      <wsdl:input message="tns:UpdateDriveDownloadDetSoapIn" />
+      <wsdl:output message="tns:UpdateDriveDownloadDetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsSuizaDriveSoap" type="tns:wsSuizaDriveSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Conectado">
+      <soap:operation soapAction="http://tempuri.org/Conectado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSession">
+      <soap:operation soapAction="http://tempuri.org/GetSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDriveHistByUsuario">
+      <soap:operation soapAction="http://tempuri.org/ListDriveHistByUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDriveHistByUserRango">
+      <soap:operation soapAction="http://tempuri.org/ListDriveHistByUserRango" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDriveDownloadDet">
+      <soap:operation soapAction="http://tempuri.org/ListDriveDownloadDet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCompaniaRucByUser">
+      <soap:operation soapAction="http://tempuri.org/ListCompaniaRucByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfOcupacionalPacFirmDig">
+      <soap:operation soapAction="http://tempuri.org/GetInfOcupacionalPacFirmDig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfOcupacionalPac">
+      <soap:operation soapAction="http://tempuri.org/GetInfOcupacionalPac" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfPreventivoPac">
+      <soap:operation soapAction="http://tempuri.org/GetInfPreventivoPac" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDriveDownloadDet">
+      <soap:operation soapAction="http://tempuri.org/UpdateDriveDownloadDet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsSuizaDriveSoap12" type="tns:wsSuizaDriveSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Conectado">
+      <soap12:operation soapAction="http://tempuri.org/Conectado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSession">
+      <soap12:operation soapAction="http://tempuri.org/GetSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDriveHistByUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ListDriveHistByUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDriveHistByUserRango">
+      <soap12:operation soapAction="http://tempuri.org/ListDriveHistByUserRango" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDriveDownloadDet">
+      <soap12:operation soapAction="http://tempuri.org/ListDriveDownloadDet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCompaniaRucByUser">
+      <soap12:operation soapAction="http://tempuri.org/ListCompaniaRucByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfOcupacionalPacFirmDig">
+      <soap12:operation soapAction="http://tempuri.org/GetInfOcupacionalPacFirmDig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfOcupacionalPac">
+      <soap12:operation soapAction="http://tempuri.org/GetInfOcupacionalPac" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfPreventivoPac">
+      <soap12:operation soapAction="http://tempuri.org/GetInfPreventivoPac" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDriveDownloadDet">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDriveDownloadDet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsSuizaDrive">
+    <wsdl:port name="wsSuizaDriveSoap" binding="tns:wsSuizaDriveSoap">
+      <soap:address location="http://resultados.suizalab.com:89/ResultadosDigitales/wsSuizaDrive.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsSuizaDriveSoap12" binding="tns:wsSuizaDriveSoap12">
+      <soap12:address location="http://resultados.suizalab.com:89/ResultadosDigitales/wsSuizaDrive.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

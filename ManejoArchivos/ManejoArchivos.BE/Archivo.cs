@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using iText.Layout;
 using iText.IO.Image;
 using iText.Layout.Element;
+using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Font;
+using iText.IO.Font;
 
 namespace ManejoArchivos.BE
 {
@@ -101,14 +104,22 @@ namespace ManejoArchivos.BE
                 if (!Directory.Exists(@dirTempSited))                
                     Directory.CreateDirectory(@dirTempSited);  
 
-                PdfDocument pdfDocument = new PdfDocument(new PdfReader(docInicial), new PdfWriter(pathTempSited));                
+                PdfDocument pdfDocument = new PdfDocument(new PdfReader(docInicial), new PdfWriter(pathTempSited));
+
+                PdfCanvas canvas = new PdfCanvas(pdfDocument.GetPage(2));
+                canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.HELVETICA), 8)
+                    .MoveText(50, 99).ShowText("___________________").EndText();
+
+                canvas.BeginText().SetFontAndSize(PdfFontFactory.CreateFont(FontConstants.HELVETICA), 8)
+                    .MoveText(59, 89).ShowText("Firma del Paciente").EndText();
+
                 using (Document document = new Document(pdfDocument))
                 {
                     // Cargamos la imagen desde la ruta
                     ImageData imageData = ImageDataFactory.Create(rutaFirma);
 
                     // Crear objeto de imagen de diseño y proporcionar parámetros.Número de página = 1
-                    Image image = new Image(imageData).ScaleAbsolute(84, 30).SetFixedPosition(1, 200, 573);
+                    Image image = new Image(imageData).ScaleAbsolute(84, 30).SetFixedPosition(2, 50, 100);
 
                     // Agregamos la imagen al documento
                     document.Add(image);
