@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManejoArchivos.BE", "Manejo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObtenerFacturas", "ObtenerFacturas\ObtenerFacturas.csproj", "{7885E5DA-0E75-404E-8114-4150A1D2D9B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManejoArchivos.DA", "ManejoArchivos.DA\ManejoArchivos.DA.csproj", "{9B8D23D0-8100-4B2A-9EE4-77AE4035CCCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManejoArchivos.BL", "ManejoArchivos.BL\ManejoArchivos.BL.csproj", "{4C6F3D6A-58A1-4418-A4A6-BF749DDA12CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{7885E5DA-0E75-404E-8114-4150A1D2D9B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7885E5DA-0E75-404E-8114-4150A1D2D9B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7885E5DA-0E75-404E-8114-4150A1D2D9B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B8D23D0-8100-4B2A-9EE4-77AE4035CCCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8D23D0-8100-4B2A-9EE4-77AE4035CCCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8D23D0-8100-4B2A-9EE4-77AE4035CCCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8D23D0-8100-4B2A-9EE4-77AE4035CCCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6F3D6A-58A1-4418-A4A6-BF749DDA12CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6F3D6A-58A1-4418-A4A6-BF749DDA12CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6F3D6A-58A1-4418-A4A6-BF749DDA12CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6F3D6A-58A1-4418-A4A6-BF749DDA12CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

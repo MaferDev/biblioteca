@@ -28,10 +28,8 @@ namespace ObtenerFacturas
         }
 
         private void btnPdf_Click(object sender, EventArgs e)
-        {
-            ObtenerInformePreventivo();
-            //ObtenerFactura();
-
+        {            
+            ObtenerFactura();
         }
 
         public void ObtenerInformePreventivo()
@@ -60,16 +58,17 @@ namespace ObtenerFacturas
 
         public void ObtenerFactura()
         {
-            string docSalida = @ConfigurationManager.AppSettings["strRaiz"] + "Factura.pdf";
             byte[] pdf64 = null;
             string Ruc = "20330025213";
-            string Serie = "FMF1";
-            string Correlativo = "0059848";
+            string Serie = "FMA1";
+            string Correlativo = "0000014";
             string TipoDocumento = "01";
-            string Fecha = "02/10/2019";
-            string MontoTotal = "156.99";
+            string Fecha = "07/11/2019";
+            string MontoTotal = "157.89";
+
+            string docSalida = @"ServicioWindow\FC_"+Serie+"_"+Correlativo+".pdf";
             //String.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(parametros[3]))
-                       
+
             try
             {   
                 WSConsultaComprobantesOnLine.consultService ws = new WSConsultaComprobantesOnLine.consultService();
@@ -113,5 +112,14 @@ namespace ObtenerFacturas
             }
         }
 
+        private void btnInforme_Click(object sender, EventArgs e)
+        {
+            ObtenerInformePreventivo();
+        }
+
+        private void btnconsolidado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

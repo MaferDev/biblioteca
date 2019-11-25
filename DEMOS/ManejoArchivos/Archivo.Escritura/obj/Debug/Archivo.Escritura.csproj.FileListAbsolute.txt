@@ -1,7 +1,6 @@
 C:\Users\mhuaman\source\repos\ManejoArchivos\Archivo.Escritura\bin\Debug\Archivo.Escritura.exe.config
 C:\Users\mhuaman\source\repos\ManejoArchivos\Archivo.Escritura\bin\Debug\Archivo.Escritura.exe
 C:\Users\mhuaman\source\repos\ManejoArchivos\Archivo.Escritura\bin\Debug\Archivo.Escritura.pdb
-C:\Users\mhuaman\source\repos\ManejoArchivos\Archivo.Escritura\obj\Debug\Archivo.Escritura.csprojAssemblyReference.cache
 C:\Users\mhuaman\source\repos\ManejoArchivos\Archivo.Escritura\obj\Debug\Archivo.Escritura.Form1.resources
 C:\Users\mhuaman\source\repos\ManejoArchivos\Archivo.Escritura\obj\Debug\Archivo.Escritura.Properties.Resources.resources
 C:\Users\mhuaman\source\repos\ManejoArchivos\Archivo.Escritura\obj\Debug\Archivo.Escritura.csproj.GenerateResource.cache

@@ -31,6 +31,8 @@
             this.btnPdf = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnSendMail = new System.Windows.Forms.Button();
+            this.btnInforme = new System.Windows.Forms.Button();
+            this.btnconsolidado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPdf
@@ -58,15 +60,36 @@
             this.btnSendMail.TabIndex = 2;
             this.btnSendMail.Text = "Envio de Mail";
             this.btnSendMail.UseVisualStyleBackColor = true;
-
+            // 
+            // btnInforme
+            // 
+            this.btnInforme.Location = new System.Drawing.Point(315, 22);
+            this.btnInforme.Name = "btnInforme";
+            this.btnInforme.Size = new System.Drawing.Size(141, 23);
+            this.btnInforme.TabIndex = 0;
+            this.btnInforme.Text = "Firma Informe";
+            this.btnInforme.UseVisualStyleBackColor = true;
+            this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
+            // 
+            // btnconsolidado
+            // 
+            this.btnconsolidado.Location = new System.Drawing.Point(487, 22);
+            this.btnconsolidado.Name = "btnconsolidado";
+            this.btnconsolidado.Size = new System.Drawing.Size(141, 23);
+            this.btnconsolidado.TabIndex = 0;
+            this.btnconsolidado.Text = "Consolidar";
+            this.btnconsolidado.UseVisualStyleBackColor = true;
+            this.btnconsolidado.Click += new System.EventHandler(this.btnconsolidado_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 142);
+            this.ClientSize = new System.Drawing.Size(707, 191);
             this.Controls.Add(this.btnSendMail);
             this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.btnconsolidado);
+            this.Controls.Add(this.btnInforme);
             this.Controls.Add(this.btnPdf);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -80,6 +103,8 @@
         private System.Windows.Forms.Button btnPdf;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnSendMail;
+        private System.Windows.Forms.Button btnInforme;
+        private System.Windows.Forms.Button btnconsolidado;
     }
 }
 

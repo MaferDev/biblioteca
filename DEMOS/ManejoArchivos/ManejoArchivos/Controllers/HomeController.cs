@@ -45,14 +45,14 @@ namespace ManejoArchivos.Controllers
             lista_PDFs.Add(@"\\192.168.0.15\webformatoszip\25127081802\02102019172022\ODONTO_YANACGONZALES_02102019172035.pdf");
             lista_PDFs.Add(@"\\192.168.0.15\webformatoszip\25127081802\02102019172022\OFTALMO_YANACGONZALES_02102019172038.pdf");
 
-            if (Archivo.GenerarArchivoAgrupado(lista_PDFs, docSalida, out strMensaje))
-            {
-                return Json(new { Success = true , Msg= strMensaje });
-            }
-            else
-            {
+            //if (Archivo.GenerarArchivoAgrupado(lista_PDFs, docSalida, out strMensaje))
+            //{
+            //    return Json(new { Success = true , Msg= strMensaje });
+            //}
+            //else
+            //{
                 return Json(new { Success = false, Msg = strMensaje });
-            }
+            //}
 
         }
 

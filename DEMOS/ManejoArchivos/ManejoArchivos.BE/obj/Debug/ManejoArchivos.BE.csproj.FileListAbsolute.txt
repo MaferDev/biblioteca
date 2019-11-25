@@ -2,7 +2,6 @@ C:\Users\mhuaman\source\repos\ManejoArchivos\ManejoArchivos.BE\bin\Debug\ManejoA
 C:\Users\mhuaman\source\repos\ManejoArchivos\ManejoArchivos.BE\bin\Debug\ManejoArchivos.BE.pdb
 C:\Users\mhuaman\source\repos\ManejoArchivos\ManejoArchivos.BE\obj\Debug\ManejoArchivos.BE.dll
 C:\Users\mhuaman\source\repos\ManejoArchivos\ManejoArchivos.BE\obj\Debug\ManejoArchivos.BE.pdb
-C:\Users\mhuaman\source\repos\ManejoArchivos\ManejoArchivos.BE\obj\Debug\ManejoArchivos.BE.csprojAssemblyReference.cache
 C:\Users\mhuaman\source\repos\ManejoArchivos\ManejoArchivos.BE\obj\Debug\ManejoArchivos.BE.csproj.CopyComplete
 C:\Users\mhuaman\source\repos\ManejoArchivos\ManejoArchivos.BE\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\mhuaman\source\repos\ManejoArchivos\ManejoArchivos.BE\bin\Debug\Common.Logging.Core.dll
@@ -62,3 +61,4 @@ D:\MAFER\X_GIT\biblioteca\DEMOS\ManejoArchivos\ManejoArchivos.BE\obj\Debug\Manej
 D:\MAFER\X_GIT\biblioteca\DEMOS\ManejoArchivos\ManejoArchivos.BE\obj\Debug\ManejoArchivos.BE.csproj.CopyComplete
 D:\MAFER\X_GIT\biblioteca\DEMOS\ManejoArchivos\ManejoArchivos.BE\obj\Debug\ManejoArchivos.BE.dll
 D:\MAFER\X_GIT\biblioteca\DEMOS\ManejoArchivos\ManejoArchivos.BE\obj\Debug\ManejoArchivos.BE.pdb
+C:\Users\mhuaman\source\repos\ManejoArchivos\ManejoArchivos.BE\obj\Debug\ManejoArchivos.BE.csprojAssemblyReference.cache
