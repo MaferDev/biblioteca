@@ -1,0 +1,39 @@
+BABE + WEBPACK
+=======================
+npm init -y
+
+npm i webpack webpack-cli @babel/core @babel/preset-env @babel/polyfill babel-loader html-webpack-plugin webpack-dev-server
+
+npm i css-loader style-loader mini-css-extract-plugin
+
+    Comentarios
+-------------------
+npm init -y ::: Crea el archivo de package.json
+@babel/core ::: Modulo de Babel
+@babel/preset-env :::  Modulo para tener las ultimas caracteristicas de Js
+@babel/polyfill ::: Modulo para manejar códigos asincronos Asinc- Awite
+babel-loader :::  modulo para integrar babel con Webpack
+html-webpack-plugin ::: Para que el html se minifique y pase a la carpeta de producción
+webpack-dev-server ::: Modulo para crear un servidor de desarrollo
+mini-css-extract-plugin ::: Modulo para extraer códigos de css aparte en produccion.
+css-loader style-loader ::: Para incluir css a nuestro webpack e importar en 
+npx webpack -p ::: Para generar código para produccion
+el js.np
+
+module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+
+
+
+
+
+
+
+Para instalar packetes necesarios para el funcionamiento de de babel y webpack
+===================
