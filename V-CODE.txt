@@ -1,0 +1,11 @@
+EXTENCIONES CODE:
+____________________
+Can I Use
+DESC: Verificar que tu código funciona en todos los navegadores.
+USO:
+ctrl+shift+i
+
+
+Live Server
+________________
+DESC: Servidor que se ejecuta la previsualización de tu pagina
