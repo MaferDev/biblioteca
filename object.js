@@ -53,3 +53,19 @@ class Profesor extends Persona{
 let profesor1=new Profesor('Andres',28,'65875')
 console.log(profesor1)
 console.log("Nombre del profesor: ",profesor1.getNombre())
+
+//=====================================================
+let obUser={
+    dni:25898875,
+    nombre:'juan',
+    sexo:'M',
+    edad:20
+  }
+  
+  c(obUser)
+  
+  delete obUser.edad // Elimina una propiedad  - true
+  
+  c(obUser)
+  
+  obUser['estado'] = 'feliz'  // se agrega propiedades

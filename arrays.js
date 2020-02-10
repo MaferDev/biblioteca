@@ -10,49 +10,99 @@ const users=[
 
 // Copia valores del array sin duplicado
 const unique = Array.from(new Set(users)) 
-console.log(unique)
+const c = (val)=> console.log(val)
+
+c(unique)
+
+
+//===============================================
+//AGREGAR Y QUITAR ELEMENTOS DE UN ARRAY
+//===============================================
+
+// Agrega un elemento en la ultima posición
+array.push(6)
+
+// Elimina el ultimo elemento
+array.pop() 
+
+//Agrega un elemento en la primera posición del array
+array.unshift('Nuevo') 
+
+// Elimina el primer elemento
+array.shift() 
+
+// Elimina el primer elemento
+// splice (posición, item a eliminar, 'item a agregar')
+array.splice(2,1,'Hola') 
+
+// Obtiene un nuevo array con los datos obtenidos
+// slice (posición inicial, posición final)
+c(array.slice(2,5) )
 
 //========================================================
-
 //Obtiene los ultimos 3 valores del array
-console.log(unique.slice(-3)) 
-//========================================================
+c(unique.slice(-3)) 
 
+//===============================================
+//RECORRER ARRAY
+//===============================================
 // La funcion trabaja por par:
-console.log('Reduce:')
+//.reduce()  -> Reduce los elementos a un solo valor
+
+c('Reduce:')
 let arrayR=[0,2,5,6,7]
-let suma = arrayR.reduce((acumulador,valor)=>acumulador+valor)
-console.log('suma:',suma)
+let sumaArray = arrayR.reduce((acumulador,valor)=>acumulador+valor)
+c('suma:',sumaArray)
 
 //========================================================
 // include verifica si el elemento existe en el arreglo
 let arr=[2,5,7,9];
 let ExisteEnArray = arr.includes(5)
-console.log("Existe en Array: ",ExisteEnArray) // true/false
+c("Existe en Array: ",ExisteEnArray) // true/false
 
 //========================================================
 //concat: concatena dos arrays
 const array1=[1,2,3]
 const array2=['a','b','c']
 const Array12=array1.concat(array2)
-console.log("Array concatenado: ",Array12)
+c("Array concatenado: ",Array12)
 
 //========================================================
 //.entries() retorna un nuevo objeto con clave/valor
 const array=[0,2,5,6,7]
 const iterator=array.entries()
-console.log("Array para iterador:",array)
-console.log(iterator.next().value)
-console.log(iterator.next().value)
-console.log(iterator.next().value)
+c("Array para iterador:",array)
+c(iterator.next().value)
+c(iterator.next().value)
+c(iterator.next().value)
+
+//========================================================
+//.map()  -> transforma todos los elementos de un array en base a una condición
+const arrayCambiado = ar1.map(el=>2*el)
+
+//========================================================
+//.filter()  -> Filtra los elementos que cumplan con la condición
+const arrayfiltrado = ar1.filter(el=>el>5)
+
+
+//===============================================
+//OBTENER UN OBJETO NUEVO CON VALORES ÚNICOS DEL ARRAY
+//===============================================
+const removeDuplicate = arr=>[...new Set(arr)] // Remueve duplicado
+
+const ar1 = ['juan','sandro','Daniela','Lidia','Carlos']
+
+//Buscar si por lo menos un elemento cumple con una condición 
+c(ar1.some(el=>el=='Luis')) // true
+c(ar1.some(el=>el=='Fer')) // false
 
 //========================================================
 //every() verifica si todos los valores cumplen una condición true/false
 isBelowTheshold = (val) => val<40;
 let arrayEveryTrue = [1,30,35,39];
 let arrayEveryFalse = [5,50]
-console.log("Los valores que cumplen la función: ",arrayEveryTrue.every(isBelowTheshold))//true
-console.log(arrayEveryFalse.every(isBelowTheshold))//false
+c("Los valores que cumplen la función: ",arrayEveryTrue.every(isBelowTheshold))//true
+c(arrayEveryFalse.every(isBelowTheshold))//false
 
 //========================================================
 //filter() crea un array solo con valores que cumplan la condición
@@ -60,8 +110,13 @@ esMayorTres=(val)=>val>3
 const arrayTemp=[0,2,5,6,7]
 const result=arrayTemp.filter(val=>val<5)
 const result2=arrayTemp.filter(esMayorTres)
-console.log(result) // [0,2]
-console.log(result2) // [5,6,7]
+c(result) // [0,2]
+c(result2) // [5,6,7]
+
+
+//===============================================
+//BUSCAR ELEMENTOS
+//===============================================
 
 //========================================================
 //Find, busqueda en un array o objeto
@@ -79,28 +134,28 @@ const persona = [
 ]
 let BuscarPersona = persona.find(per=>per.nombre=='Andres')
 let BuscarCurso = cursos.find(curso=>curso=='java')
-console.log(BuscarPersona)
-console.log(BuscarCurso)
+c(BuscarPersona)
+c(BuscarCurso)
 //========================================================
 //PADEND && PADSTAR
 let example ='Dyland';
 //padStar : completa con los caracteres a, hasta llegar al 10 en total
-console.log(example.padStart(10,'abc'));
+c(example.padStart(10,'abc'));
 //padEnd: completa al final
-console.log(example.padEnd(8,"xs"));
+c(example.padEnd(8,"xs"));
 
 //========================================================
 //SET: te permite almacenar valores únicos de cualquier tipo
 const variable=new Set([1,2,3,3,3,3])
 variable.add(6)
 variable.delete(1)
-console.log(variable.size)
-console.log(variable)
+c(variable.size)
+c(variable)
 
 //========================================================
 //FUNCIONES CON PARAMETRO SPREAD (Distribuido)
 function ComprarCursos(nombre, precio, cantidad){
-	console.log(nombre,precio,cantidad)
+	c(nombre,precio,cantidad)
 }
 
 let curso=['java',150,2]
@@ -108,7 +163,7 @@ ComprarCursos(...curso)
 
 //FUNCIONES CON PARAMETRO AGRUPADO
 function MostrarCursos(...curso){
-	console.log(curso)
+	c(curso)
 }
 
 MostrarCursos('c++','java','go','php')
@@ -116,6 +171,7 @@ MostrarCursos('c++','java','go','php')
 //========================================================
 
 //========================================================
+
 //========================================================
 
 //========================================================
