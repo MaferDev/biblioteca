@@ -39,7 +39,6 @@ array.splice(2,1,'Hola')
 // slice (posición inicial, posición final)
 c(array.slice(2,5) )
 
-//========================================================
 //Obtiene los ultimos 3 valores del array
 c(unique.slice(-3)) 
 
@@ -169,6 +168,36 @@ function MostrarCursos(...curso){
 MostrarCursos('c++','java','go','php')
 
 //========================================================
+yepnope
+//===========================================
+
+yepnope({
+  // permite cargar directamente un recurso(s) independientemente de los tests.
+  load : 'http:/­/code.jquery.com/jquery-1.5.0.js',
+ 
+  // la condición, el objeto que evaluamos.
+  test : window.JSON,
+ 
+  // si la condición no se cumple. cargamos la alternatica.
+  nope : 'json2.js',
+ 
+  // When json2.js is loaded => función que se ejecuta una vez que los recursos han sido cargados.
+  callback : function(){
+    console.log( 'JSON not present by default but now is ready to use' );
+  },
+ 
+  // When the test is complete (both true or false) 
+  //(función que se ejecuta una vez la evaluación ha finalizado sin que necesariamente se haya cargado un recurso.)
+  complete : function(){
+    var data = window.JSON.parse( '{ "foo" : "Hello World" }' );
+  }
+});
+
+
+– test: la condición, el objeto que evaluamos.
+– yep: si la condición se cumple, cargamos el recurso(s) asociado.
+– nope: si la condición no se cumple. cargamos la alternatica.
+
 
 //========================================================
 
