@@ -27,3 +27,35 @@ UNIR DOS RAMAS:
 	Automatic merge failed; fix conflicts and then commit the result.
 
 3. Se elimina la rama que ya no se necesita: $ git branch -d iss53
+
+=========================================
+ANADIR CONTENIDO
+Agregar todos los archivos ($ git add .)
+Agregar un archivo ($ git add Archivo)
+
+=========================================
+Ver estado el estado:
+$ git status
+
+
+=========================================
+UNIR DOS RAMAS:
+
+1: Primero se va a la rama master: $ git checkout master
+
+	Switched to branch 'master'
+
+2: Se hace una unión con la rama deseada: $ git merge RAMA 
+	Merge made by the 'recursive' strategy.
+	index.html |    1 +
+		1 file changed, 1 insertion(+)
+
+   En el caso que haya confrictos al momento de unir dos ramas, estas se veran reflejadas en el mensaje, el cuál debe ser solucionalo manualmente, ya que posiblemente dos funciones tienen el mismo nombre en un archivo y tienen diferente código o dos archivos iguales tienen diferente contenido.
+
+	Auto-merging index.html
+	CONFLICT (content): Merge conflict in index.html
+	Automatic merge failed; fix conflicts and then commit the result.
+
+3. Se elimina la rama que ya no se necesita: $ git branch -d iss53
+
+git log --oneline
