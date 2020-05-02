@@ -1,0 +1,125 @@
+PROMESAS
+=========================================
+
+npm install request
+npm install request-promise
+
+Estado de promesas:
+____________________
+
+fullfiled: Completado con exito.
+rejected: No se cumplio con exito
+pending: Cuando la operacion no ha terminado
+seled: finalizada con algun estado
+
+
+request (ulr,(err,response)=>{
+	err ? reject (err) : resolve(response)
+})
+
+let promesa1 = new Promesa()
+let promesa2 = new Promesa()
+Promise.all([promesa1,promesa2]).then()
+
+=========================================
+For of : Itera sobre los valores
+for in : itera sobre las propiedades
+=========================================
+asyn await
+___________
+
+async function showPhotos(){
+    console.log('inicio')
+    let response = await fetch('https://jsonplaceholder.typicode.com/photos')
+    let photos = await response.json()
+    console.log(photos)
+    console.log('FIN')
+}
+
+showPhotos()
+
+MANEJO DE ERRORES:
+-----------------
+con try y catch. Ademas tener en cuenta que el async y await espera q todas las funciones u operaciones dentro de la funcion de tipo async tienen que terminar de ejecutarse.
+
+=========================================
+MODULOS
+----------
+- Permiten compartir códigos entre archivos de js
+- Permite crear bloques de código para rehutilizar.
+- Permite separar funcionalidades en Modulos.
+
+=========================================
+ITERADORES y Generador
+----------
+
+la libreria  co.js
+utiliza generadores
+
+function* counter(){
+  for(let i=1;i<=5;i++){
+    yield i
+  }
+	
+}
+let generador = counter();
+
+function* retornador()
+{
+  yield* counter()
+  console.log('regrese')
+}
+
+let g = retornador()
+
+console.log(g.next())
+console.log(g.next())
+
+=========================================
+
+SIMBOLOS EN JS
+--------------
+Para que un metodo no se puede modificar se utiliza simbolos
+
+Su uso es para claves o paswords.
+
+let rango = {
+  min:null,
+  max:null,
+  currentValue: null,
+  [Symbol.iterator](){
+    return this
+  },
+  next(){
+    if(!this.currentValue) 
+      this.currentValue = this.min
+    
+      let result ={}
+    if(this.currentValue>=this.min && this.currentValue<=this.max)
+     {
+       result = {value:this.currentValue,done:false}
+       this.currentValue++
+     }else
+      result = {done:true}
+    
+      return result
+  }
+}
+
+rango.min = 5
+rango.max = 10
+
+for(n of rango){
+  console.log(n)
+}
+
+=========================================
+
+=========================================
+
+=========================================
+
+=========================================
+
+=========================================
+=========================================
