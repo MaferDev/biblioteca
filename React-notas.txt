@@ -1,0 +1,56 @@
+================================================================
+Pasos
+================================================================
+- npx create-react-app PROYECTO	<< Crear un proyecto de React
+- npm install -g yarn	<< cambio de utilizar npm
+- yarn start	<< Iniciar el servidor
+- yarn add propp-types
+- yarn add react-router-dom	<< Menejo de rutas con Jxs
+- yarn add axios 	<< Para teticiones de API
+- yarn add @material-ui/core << Instalar material UI
+- yarn add @material-ui/icons <<Iconos de material UI
+
+
+
+
+//Componente de orden superior son funciones que se pueden utilizar en diferentes componentes HOC
+ - Siempre tiene que empezar con with y el tipo de archivo es js
+
+================================================================
+NOTAS:
+================================================================
+any-api : Api gratis para consumir
+
+================================================================
+Extenciones vcode REACTJS
+================================================================
+
+ - React-Native/React/Redux snippets for es6/es7
+ - Auto Import 
+ - React PropTypes Intellisense
+ - Javascript code snippets
+
+JS
+=====
+fre ===> arrayName.forEach(element => { }
+fof ===> for(let itemName of objectName { }
+fin ===> for(let itemName in objectName { }
+anfn ===> Función anónima ===> (params) => { }
+nfn ===> Función nombrada ===> const functionName = (params) => { }
+
+REACT
+=================
+cdm ===> componentDidMount = () => { }
+cdup ===> componentDidUpdate = (prevProps, prevState) => { }
+cwun ===> componentWillUnmount = () => { }
+rafce ===> Trae toda la estructura de react para exportar un componente
+
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================

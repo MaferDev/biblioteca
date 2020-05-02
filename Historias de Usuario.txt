@@ -1,0 +1,26 @@
+User Story # 1: puedo ver un elemento contenedor con un correspondiente id="quote-box".
+
+User Story # 2: Dentro #quote-box, puedo ver un elemento con un correspondiente id="text".
+
+User Story # 3: Dentro #quote-box, puedo ver un elemento con un correspondiente id="author".
+
+User Story # 4: Dentro #quote-box, puedo ver un elemento en el que se puede hacer clic con el correspondiente id="new-quote".
+
+User Story # 5: Dentro #quote-box, puedo ver un aelemento en el que se puede hacer clic con el correspondiente id="tweet-quote".
+
+Historia de usuario # 6: en la primera carga, mi máquina de cotizaciones muestra una cotización aleatoria en el elemento con id="text".
+
+User Story # 7: En la primera carga, mi máquina de cotizaciones muestra el autor de la cita aleatoria en el elemento con id="author".
+
+Historia de usuario # 8: cuando #new-quotese hace clic en el botón, mi máquina de cotizaciones debe buscar una nueva cotización y mostrarla en el #textelemento.
+
+Historia de usuario n. ° 9: Mi máquina de citas debe buscar el autor de la nueva cita cuando #new-quotese hace clic en el botón y mostrarlo en el #authorelemento.
+
+User Story # 10: Puedo tuitear la cita actual haciendo clic en el #tweet-quoteaelemento. Este aelemento debe incluir la "twitter.com/intent/tweet"ruta en su hrefatributo para tuitear la cita actual.
+
+User Story # 11: El #quote-boxelemento contenedor debe estar centrado horizontalmente. Ejecute pruebas con el nivel de zoom del navegador al 100% y la página maximizada.
+
+Puede construir su proyecto bifurcando este bolígrafo CodePen . O puede usar este enlace CDN para ejecutar las pruebas en cualquier entorno que desee:https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
+
+Una vez que haya terminado, envíe la URL a su proyecto de trabajo con todas sus pruebas aprobadas.
+

@@ -1,0 +1,49 @@
+.NET
+-----
+
+Validar un modelo:
+-------------------
+if(ModelState.IsValid)
+{
+	db.Pelicula.Add(Pelicula)
+	db.SaveChanges()
+	return RedirectToAction("Index")
+}
+
+
+//Para eliminar
+-Se busca el objeto
+-se elimina
+-se guarda los cambios
+-se redirige (Return RedirectToAction("Index"))
+
+Mostrar Detalles
+----------------
+
+if(id==null){
+ return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+}
+
+-> Se gusta la pelicula
+-> Si es nullo => return HttpNotFound()
+-> return View(Peliuc)
+
+Delimitación de campos
+----------------------
+
+> [Required(ErrorMessage="El campo es obligatorio")]
+> [StringLength(6,MinimumLength = 5, ErrorMessage = "El campo {0} debe de tener una longitud minima de {2} y una longitud maxima de {3}")]
+> [Range(18,100,ErrorMessage = "El campo {0} debe de ser un número entre {1} y {2}")]
+
+
+Validación personalizada con anotaciones 
+------------------------------------------
+> Se puede crear tus propias anotaciones de validación de los campos de tus clases.
+> Para validaciones complejas se puede usar IValidatableObject, que se hace validaciones dentro del modelo.
+
+ 
+
+
+
+
+

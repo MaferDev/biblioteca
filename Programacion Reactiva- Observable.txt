@@ -1,0 +1,35 @@
+PROGRAMACIÓN REACTIVA
+-----------------------
+Observable : Listener
+
+Repositorio:
+git clone https://github.com/webtraining-zone/rxjs-boilerplate.git
+
+npm install
+
+ *npm run dev  <<< Desarrollo
+ *npm run prod <<< Producción
+ *npm run watch << Prender el entorno de desarrollo de webpack, para q automaticamente de refresquen.
+
+npm install -g live-server << instalar
+
+live-server .
+
+https://rxmarbles.com/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

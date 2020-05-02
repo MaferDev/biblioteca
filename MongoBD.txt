@@ -1,0 +1,38 @@
+CREATE
+> show dbs < te muestra las base de datos.
+> db.help() < te muestra todas las funciones de la bd
+> use webstore < Crea una base de datos webstore
+
+*************************************************************
+INSERT:
+> db.products.insert({}) < Inserta una nueva coleccion de datos.
+> show collections < muestra todas las colecciones
+
+*************************************************************
+SELECT:
+> db.users.find() < Busca todos los datos
+> db.user.find().pretty() < muestra todos los datos de forma estrucurada.
+> db.user.find({id:25468}) < busca el objeto por id y obtiene todos los datos del objeto
+> db.users.find({"id":"3"},{"name":1}) < Devuelve el usuario con solo el dato de su nombre
+> db.users.find({"id":"3"},{"name":1}).sort({name:1}) < Devuelve el usuario con solo el dato de su nombre ordenados alfabéticamente
+> db.users.find().limit(2)  < Devuelve los primeros dos datos
+> db.users.count()  < muestra total de documentos
+>   <
+>   <
+*************************************************************
+UPDATE:
+> db.users.update({"userId":"2"},{$set:{"gender":"M"}}) < Agregar un nuevo atributo o modifica si existe
+> db.users.update({"name":"Diana"},{$inc:{"age":1}}) < Incrementar un valor de un atributo numérico.
+> db.products.update({tipo:"HDD"},{$set:{cantidad:10}},{multi:true}) < Actualiza a varios campos por un valor.
+*************************************************************
+DELETE:
+
+> db.users.remove({"id":"3"})  <
+
+>  <
+
+
+
+
+
+

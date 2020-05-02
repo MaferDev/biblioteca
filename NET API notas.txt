@@ -1,0 +1,132 @@
+POST:
+*********************************************************
+Creado 201:Se genero un nuevo recurso y se adjunta la ruta de este en la cabecera.
+Aceptado 202: La petición ha sido aceptada pero aun no ha terminado. Esto es para procesos q se ejecutan ens egundo plano
+
+PUT
+*********************************************************
+No content 204: El recurso actual ha sido modificado.
+Aceptado 202: La petición ha sido aceptada pero aun no ha terminado. Esto es para procesos q se ejecutan ens egundo plano
+
+DELETE
+*********************************************************
+No content 204: El recurso fué modificado siendo eliminado. 
+Accepted 202: delete masivo, el cúal se está ejecutando pero aún no cumina.
+Ok 200:Accion se realizo con exito respondiendo una información adicional.
+
+*********************************************************
+
+200,201,302,404,400 y 500
+
+*********************************************************
+		FUNCIONES ASYNCRONAS
+*********************************************************
+[HttpPut("{id}")]
+public async Task Update(int id, [FromBody] UserPutDto model)
+{
+    await _userService.Update(id, model);
+
+    return NoContent();
+}
+*********************************************************			  ENRUTAMIENTO API		
+*********************************************************
+Puede establecer un prefijo común para un controlador completo utilizando el atributo [RoutePrefix] :
+
+-----------------------------------------------------
+[RoutePrefix("api/books")]
+public class BooksController : ApiController
+{
+    // GET api/books
+    [Route("")]
+    public IEnumerable<Book> Get() { ... }
+
+    // GET api/books/5
+    [Route("{id:int}")]
+    public Book Get(int id) { ... }
+
+    // POST api/books
+    [Route("")]
+    public HttpResponseMessage Post(Book book) { ... }
+}
+
+------------------------------------------------------
+Use una tilde (~) en el atributo del método para anular el prefijo de ruta:
+
+[RoutePrefix("api/books")]
+public class BooksController : ApiController
+{
+    // GET /api/authors/1/books
+    [Route("~/api/authors/{authorId:int}/books")]
+    public IEnumerable<Book> GetByAuthor(int authorId) { ... }
+
+    // ...
+}
+
+--------------------------------------------------------
+El prefijo de ruta puede incluir parámetros:
+
+[RoutePrefix("customers/{customerId}")]
+public class OrdersController : ApiController
+{
+    // GET customers/1/orders
+    [Route("orders")]
+    public IEnumerable<Order> Get(int customerId) { ... }
+}
+
+----------------------------------------------------------Coincidencia de los parámetros en la plantilla de ruta
+
+[Route("users/{id:int}")]
+public User GetUserById(int id) { ... }
+
+[Route("users/{name}")]
+public User GetUserByName(string name) { ... }
+
+-----------------------------------------------------------
+Parámetros URI opcionales y valores predeterminados
+
+public class BooksController : ApiController
+{
+    [Route("api/books/locale/{lcid:int?}")]
+    public IEnumerable<Book> GetBooksByLocale(int lcid = 1033) { ... }
+}
+
+-----------------------------------------------------------
+Nombres de ruta
+En la API web, cada ruta tiene un nombre. Los nombres de ruta son útiles para generar enlaces, por lo que puede incluir un enlace en una respuesta HTTP.
+
+public class BooksController : ApiController
+{
+    [Route("api/books/{id}", Name="GetBookById")]
+    public BookDto GetBook(int id) 
+    {
+        // Implementation not shown...
+    }
+
+    [Route("api/books")]
+    public HttpResponseMessage Post(Book book)
+    {
+        // Validate and add book to database (not shown)
+
+        var response = Request.CreateResponse(HttpStatusCode.Created);
+
+        // Generate a link to the new book and set the Location header in the response.
+        string uri = Url.Link("GetBookById", new { id = book.BookId });
+        response.Headers.Location = new Uri(uri);
+        return response;
+    }
+}
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+
+*********************************************************
+*********************************************************
+
+
+
+
+
+
+*********************************************************
+

@@ -1,0 +1,85 @@
+===================================================
+Store: Alamacen de la data de la app.
+
+===================================================
+Add REDUX
+===================================================
+- yarn add redux react-redux  >> Agrega las dependendencias
+*Primero se crea el estado inicial.
+- yarn add redux-devtools-extension < install redux devtool chome
+- yarn add redux-thunk	<< Permite utilizar middlewares para poder ejecutar funciones intermedias
+===================================================
+
+import {createStore} from 'redux'
+import { ADD_TO_CAR, DELETE_TO_CAR } from './action'
+
+const initialStore={
+    cart:[]
+}
+
+const rootReducer = (state=initialStore,{type,data})=>{
+    switch (type) {
+        case ADD_TO_CAR:
+            if(state.cart.find(c=>c===data)) return state
+            
+            return {
+                ...state,
+                cart:[...state.cart,data]
+            }
+        case DELETE_TO_CAR:
+            return {            
+                ...state,
+                cart: state.cart.filter(c=>c!==data)
+            }
+        default:
+            return state
+    }
+}
+export default createStore(rootReducer)
+
+
+
+===================================================
+import { ADD_TO_CAR,DELETE_TO_CAR } from "./action";
+
+const addToCar=id=>({
+    type:ADD_TO_CAR,
+    data:id   
+})
+const deleteToCar=id=>({
+    type:DELETE_TO_CAR,
+    data:id   
+})
+export {addToCar,deleteToCar}
+===================================================
+import {connect} from 'react-redux'
+
+
+const mapStateToProps=state=>(
+    {  cartLength:state.cart }
+)
+const mapDispatchToProps=()=>({})
+
+export default connect(mapStateToProps,mapDispatchToProps)(CardCount)
+
+
+===================================================
+CONTEXT API
+===================================================
+import context from 'context'
+hook
+const {valor} = useContext(_Context)
+
+===================================================
+
+===================================================
+
+===================================================
+
+===================================================
+
+===================================================
+
+===================================================
+
+===================================================
