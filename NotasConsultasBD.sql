@@ -60,3 +60,8 @@ Este operador devuelve aquellos registros cuyo campo indicado coincide con algun
 ================================================================================================*/  
 
  SELECT * FROM Pedidos WHERE Provincia In ('Madrid', 'Barcelona', 'Sevilla');
+ 
+ /*==============================================================================================
+Convertir a Número
+================================================================================================*/  
+ SELECT TO_NUMBER('123') FROM DUAL;
